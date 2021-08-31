@@ -1,4 +1,5 @@
 /* eslint-disable no-underscore-dangle */
+
 const Quiz = require('../models/quizModel');
 
 async function getAll({ query }, res) {
@@ -10,10 +11,8 @@ async function getAll({ query }, res) {
     res.send(error);
   }
 }
-async function createOne(req, res) {
+async function createOne({ description, alternatives }, res) {
   try {
-    const { description } = req.body;
-    const { alternatives } = req.body;
     const createdQuiz = await Quiz.create({
       description,
       alternatives
@@ -36,23 +35,22 @@ async function getOne(req, res) {
   }
 }
 async function updateOneQuiz(req, res) {
+  const _id = req.params.id;
+  const { description, alternatives } = req.body;
   try {
-    const _id = req.params.id;
-    const { description, alternatives } = req.body;
-    let quiz = await Quiz.findOne({ _id });
-    if (!quiz) {
-      quiz = await Quiz.create({
-        description,
-        alternatives
-      });
-      return res.status(201).json(quiz);
-    }
-    quiz.description = description;
-    quiz.alternatives = alternatives;
-    await quiz.save();
-    return res.status(200).json(quiz);
+    const userUpdated = await Quiz.findByIdAndUpdate(
+      _id,
+      { description, alternatives },
+      {
+        new: true,
+        useFindAndModify: false
+      }
+
+    );
+    res.json(userUpdated);
   } catch (error) {
-    return res.status(500).json({ error });
+    res.status(500);
+    res.send(error);
   }
 }
 async function deleteOneQuiz(req, res) {
