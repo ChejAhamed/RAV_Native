@@ -9,6 +9,16 @@ async function getAll({ query }, res) {
     res.send(error);
   }
 }
+async function createOne({ body }, res) {
+  try {
+    const createdUser = await User.create(body);
+    res.json(createdUser);
+  } catch (error) {
+    res.status(500);
+    res.send(error);
+  }
+}
 module.exports = {
-  getAll
+  getAll,
+  createOne
 };

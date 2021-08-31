@@ -21,7 +21,7 @@ server.use('/api/quiz', quizRouter);
 
 const userRouter = require('./src/routes/userRoutes');
 
-server.use('api/user/', userRouter);
+server.use('/api/user', userRouter);
 
 server.listen(
   port,
