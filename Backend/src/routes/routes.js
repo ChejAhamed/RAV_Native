@@ -6,5 +6,8 @@ quizRouter
   .route('/')
   .post(quizController.createOne)
   .get(quizController.getAll);
+quizRouter
+  .route('/:quizId')
+  .get(quizController.getOne);
 
 module.exports = quizRouter;

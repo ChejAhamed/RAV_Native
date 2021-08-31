@@ -24,5 +24,15 @@ async function createOne(req, res) {
     res.send(error);
   }
 }
+async function getOne(req, res) {
+  const { quizId } = req.params;
+  try {
+    const quiz = await Quiz.findById(quizId);
+    res.send(quiz);
+  } catch (error) {
+    res.status(500);
+    res.send(error);
+  }
+}
 
-module.exports = { getAll, createOne };
+module.exports = { getAll, createOne, getOne };
