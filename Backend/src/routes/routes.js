@@ -8,6 +8,7 @@ quizRouter
   .get(quizController.getAll);
 quizRouter
   .route('/:quizId')
-  .get(quizController.getOne);
+  .get(quizController.getOne)
+  .put(quizController.updateOneQuiz);
 
 module.exports = quizRouter;

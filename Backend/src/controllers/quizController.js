@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const Quiz = require('../models/quizModel');
 
 async function getAll({ query }, res) {
@@ -34,5 +35,30 @@ async function getOne(req, res) {
     res.send(error);
   }
 }
+async function updateOneQuiz(req, res) {
+  try {
+    const _id = req.params.id;
+    const { description, alternatives } = req.body;
+    let quiz = await Quiz.findOne({ _id });
+    if (!quiz) {
+      quiz = await Quiz.create({
+        description,
+        alternatives
+      });
+      return res.status(201).json(quiz);
+    }
+    quiz.description = description;
+    quiz.alternatives = alternatives;
+    await quiz.save();
+    return res.status(200).json(quiz);
+  } catch (error) {
+    return res.status(500).json({ error });
+  }
+}
 
-module.exports = { getAll, createOne, getOne };
+module.exports = {
+  getAll,
+  createOne,
+  getOne,
+  updateOneQuiz
+};
