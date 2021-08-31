@@ -18,7 +18,18 @@ async function createOne({ body }, res) {
     res.send(error);
   }
 }
+async function getOneById(req, res) {
+  const { userId } = req.params;
+  try {
+    const user = await User.findById(userId);
+    res.send(user);
+  } catch (error) {
+    res.status(500);
+    res.send(error);
+  }
+}
 module.exports = {
   getAll,
-  createOne
+  createOne,
+  getOneById
 };

@@ -6,4 +6,7 @@ userRouter
   .route('/')
   .post(userController.createOne)
   .get(userController.getAll);
+userRouter
+  .route('/:userId')
+  .get(userController.getOneById);
 module.exports = userRouter;
