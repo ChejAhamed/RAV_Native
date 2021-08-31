@@ -55,10 +55,21 @@ async function updateOneQuiz(req, res) {
     return res.status(500).json({ error });
   }
 }
+async function deleteOneQuiz(req, res) {
+  const { quizId } = req.params;
+  try {
+    const deleteQuiz = await Quiz.findByIdAndDelete(quizId);
+    res.json(deleteQuiz);
+  } catch (error) {
+    res.status(500);
+    res.send(error);
+  }
+}
 
 module.exports = {
   getAll,
   createOne,
   getOne,
-  updateOneQuiz
+  updateOneQuiz,
+  deleteOneQuiz
 };

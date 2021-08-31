@@ -9,6 +9,7 @@ quizRouter
 quizRouter
   .route('/:quizId')
   .get(quizController.getOne)
-  .put(quizController.updateOneQuiz);
+  .put(quizController.updateOneQuiz)
+  .delete(quizController.deleteOneQuiz);
 
 module.exports = quizRouter;
