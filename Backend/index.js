@@ -14,7 +14,7 @@ const port = process.env.PORT || 5001;
 server.use(cors());
 server.use(morgan('dev'));
 server.use(express.json());
-const quizRouter = require('./src/routes/routes');
+const quizRouter = require('./src/routes/quizRoutes');
 
 server.use('/api/quiz', quizRouter);
 server.listen(
