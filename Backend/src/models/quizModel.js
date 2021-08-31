@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { string } = require('yargs');
 
 const quizSchema = mongoose.Schema({
   description: String,

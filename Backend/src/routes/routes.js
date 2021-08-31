@@ -1,4 +1,9 @@
-const express = require('express');
+const { Router } = require('express');
+const quizController = require('../controllers/quizController');
 
-const quizRouter = express.Router();
+const quizRouter = new Router();
+quizRouter
+  .route('/')
+  .post(quizController.createOne);
+
 module.exports = quizRouter;
