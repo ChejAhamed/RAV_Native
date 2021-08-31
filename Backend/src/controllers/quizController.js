@@ -9,5 +9,14 @@ async function getAll({ query }, res) {
     res.send(error);
   }
 }
+async function createOne({ body }, res) {
+  try {
+    const createQuiz = await Quiz.create(body);
+    res.json(createQuiz);
+  } catch (error) {
+    res.status(500);
+    res.send(error);
+  }
+}
 
-module.exports = { getAll };
+module.exports = { getAll, createOne };
