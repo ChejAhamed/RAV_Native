@@ -19,6 +19,7 @@ import DashboardScreen from './src/components/Dashboard/Dashboard';
 import ProfileScreen from './src/components/Profile/Profile';
 import StatisticsScreen from './src/components/Statistics/Statistics';
 import QuizScreen from './src/components/Quiz/Quiz';
+import QuizStartScreen from './src/components/QuizStart.tsx/QuizStart';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
@@ -45,6 +46,7 @@ const App = () => {
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Statistics" component={StatisticsScreen} />
         <Stack.Screen name="Quiz" component={QuizScreen} />
+        <Stack.Screen name="QuizStart" component={QuizStartScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
