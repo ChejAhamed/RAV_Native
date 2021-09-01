@@ -19,14 +19,14 @@ import {
 } from 'react-native';
 
 
-import { NavigationContainer } from '@react-navigation/native';
+
 
 const App = () => {
 
   return (
-    <NavigationContainer>
-      <Text>HOLA</Text>
-    </NavigationContainer>
+
+      <Text>HOLA Bryan</Text>
+
   );
 };
 
