@@ -20,6 +20,7 @@ import ProfileScreen from './src/components/Profile/Profile';
 import StatisticsScreen from './src/components/Statistics/Statistics';
 import QuizScreen from './src/components/Quiz/Quiz';
 import QuizStartScreen from './src/components/QuizStart.tsx/QuizStart';
+import QuizEndScreen from './src/components/QuizEnd/QuizEnd';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
@@ -47,6 +48,7 @@ const App = () => {
         <Stack.Screen name="Statistics" component={StatisticsScreen} />
         <Stack.Screen name="Quiz" component={QuizScreen} />
         <Stack.Screen name="QuizStart" component={QuizStartScreen} />
+        <Stack.Screen name="QuizEnd" component={QuizEndScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

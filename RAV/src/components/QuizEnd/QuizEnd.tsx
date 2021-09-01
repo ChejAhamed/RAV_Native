@@ -1,26 +1,18 @@
 import React from 'react';
 import {View, StyleSheet, Pressable, Text} from 'react-native';
 
-function QuizStartScreen({navigation}: any) {
+function QuizEndScreen({navigation}: any) {
   const onPressHandlerDashboard = () => {
     navigation.navigate('Dashboard');
   };
-  const onPressHandlerQuizEnd = () => {
-    navigation.navigate('QuizEnd');
-  };
   return (
     <View style={styles.body}>
-      <Text style={styles.text}>##QuizStart##</Text>
+      <Text style={styles.text}>##QuizEnd##</Text>
 
       <Pressable
         onPress={onPressHandlerDashboard}
         style={({pressed}) => ({backgroundColor: pressed ? 'pink' : 'gold'})}>
         <Text style={styles.text}>Dashboard</Text>
-      </Pressable>
-      <Pressable
-        onPress={onPressHandlerQuizEnd}
-        style={({pressed}) => ({backgroundColor: pressed ? 'pink' : 'gold'})}>
-        <Text style={styles.text}>QuizEnd</Text>
       </Pressable>
     </View>
   );
@@ -39,4 +31,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default QuizStartScreen;
+export default QuizEndScreen;
