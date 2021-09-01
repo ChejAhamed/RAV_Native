@@ -11,21 +11,34 @@
 
 import React from 'react';
 
-
-  Text,
-
-
-} from 'react-native';
-
-
-
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import SignUpScreen from './src/components/SingUp/SignUp';
+import LogInScreen from './src/components/LogIn/Login';
+const Stack = createNativeStackNavigator();
 
 const App = () => {
 
   return (
-
-      <Text>HOLA Bryan</Text>
-
+    <NavigationContainer>
+      <Stack.Navigator
+        // screenOptions={{
+        //   header: () => null
+        // }}
+      >
+        <Stack.Screen
+          name="Screen_SignUp"
+          component={SignUpScreen}
+          options={{
+           header: () => null,
+          }}
+        />
+        <Stack.Screen
+          name="Screen_LogIn"
+          component={LogInScreen}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
