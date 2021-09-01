@@ -11,6 +11,9 @@ function DashboardScreen({navigation}: any) {
   const onPressHandlerStatistics = () => {
     navigation.navigate('Statistics');
   };
+  const onPressHandlerQuiz = () => {
+    navigation.navigate('Quiz');
+  };
 
   return (
     <View style={styles.body}>
@@ -19,6 +22,11 @@ function DashboardScreen({navigation}: any) {
         onPress={onPressHandlerLogIn}
         style={({pressed}) => ({backgroundColor: pressed ? '#ddd' : '#0f0'})}>
         <Text style={styles.text}>Go to LogIn Screen</Text>
+      </Pressable>
+      <Pressable
+        onPress={onPressHandlerQuiz}
+        style={({pressed}) => ({backgroundColor: pressed ? '#ddd' : '#0f0'})}>
+        <Text style={styles.text}>Quiz</Text>
       </Pressable>
       <Pressable
         onPress={onPressHandlerProfile}

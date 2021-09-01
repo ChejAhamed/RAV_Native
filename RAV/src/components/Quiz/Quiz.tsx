@@ -1,13 +1,13 @@
 import React from 'react';
 import {View, StyleSheet, Pressable, Text} from 'react-native';
 
-function ProfileScreen({navigation}: any) {
+function QuizScreen({navigation}: any) {
   const onPressHandlerDashboard = () => {
     navigation.navigate('Dashboard');
   };
   return (
     <View style={styles.body}>
-      <Text style={styles.text}>##Profiled##</Text>
+      <Text style={styles.text}>##Quiz##</Text>
 
       <Pressable
         onPress={onPressHandlerDashboard}
@@ -31,4 +31,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProfileScreen;
+export default QuizScreen;
