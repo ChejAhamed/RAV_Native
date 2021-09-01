@@ -1,25 +1,18 @@
 import React from 'react';
 import {View, StyleSheet, Pressable, Text} from 'react-native';
 
-function LogInScreen({navigation}: any) {
-  const onPressHandlerSignUp = () => {
-    navigation.navigate('Screen_SignUp');
-  };
+function StatisticsScreen({navigation}: any) {
   const onPressHandlerDashboard = () => {
     navigation.navigate('Dashboard');
   };
   return (
     <View style={styles.body}>
-      <Text style={styles.text}>##Screen Login##</Text>
-      <Pressable
-        onPress={onPressHandlerSignUp}
-        style={({pressed}) => ({backgroundColor: pressed ? '#ddd' : '#0f0'})}>
-        <Text style={styles.text}>Go to Screen SingUp</Text>
-      </Pressable>
+      <Text style={styles.text}>##Statisticsd##</Text>
+
       <Pressable
         onPress={onPressHandlerDashboard}
         style={({pressed}) => ({backgroundColor: pressed ? 'pink' : 'gold'})}>
-        <Text style={styles.text}>Go to Dashboardp</Text>
+        <Text style={styles.text}>Dashboard</Text>
       </Pressable>
     </View>
   );
@@ -38,4 +31,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LogInScreen;
+export default StatisticsScreen;

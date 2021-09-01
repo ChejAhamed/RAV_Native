@@ -12,10 +12,10 @@ function SignUpScreen({navigation}: any) {
         source={{
           uri: 'https://seminariomadrid.org/wp-content/uploads/2016/03/js-logo.png',
         }}
-        style={{width: 200, height: 200}}
+        style={styles.image}
       />
 
-      <Text style={styles.text}>SignUp Screen</Text>
+      <Text style={styles.text}>**SignUp Screen**</Text>
       <Text>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
         quibusdam optio molestiae pariatur deserunt quasi natus qui, rerum
@@ -41,6 +41,10 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: 'bold',
     margin: 10,
+  },
+  image: {
+    height: 200,
+    width: 200,
   },
 });
 

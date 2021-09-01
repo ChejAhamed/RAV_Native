@@ -2,17 +2,33 @@ import React from 'react';
 import {View, StyleSheet, Pressable, Text} from 'react-native';
 
 function DashboardScreen({navigation}: any) {
-  const onPressHandler = () => {
+  const onPressHandlerLogIn = () => {
     navigation.navigate('Screen_LogIn');
+  };
+  const onPressHandlerProfile = () => {
+    navigation.navigate('Profile');
+  };
+  const onPressHandlerStatistics = () => {
+    navigation.navigate('Statistics');
   };
 
   return (
     <View style={styles.body}>
-      <Text style={styles.text}>Dashboard Screen</Text>
+      <Text style={styles.title}>==Dashboard Screen==</Text>
       <Pressable
-        onPress={onPressHandler}
+        onPress={onPressHandlerLogIn}
         style={({pressed}) => ({backgroundColor: pressed ? '#ddd' : '#0f0'})}>
         <Text style={styles.text}>Go to LogIn Screen</Text>
+      </Pressable>
+      <Pressable
+        onPress={onPressHandlerProfile}
+        style={({pressed}) => ({backgroundColor: pressed ? '#ddd' : '#0f0'})}>
+        <Text style={styles.text}>Profile</Text>
+      </Pressable>
+      <Pressable
+        onPress={onPressHandlerStatistics}
+        style={({pressed}) => ({backgroundColor: pressed ? '#ddd' : '#0f0'})}>
+        <Text style={styles.text}>Statistics</Text>
       </Pressable>
     </View>
   );
@@ -25,7 +41,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue',
   },
   text: {
-    fontSize: 40,
+    fontSize: 20,
+    fontWeight: 'bold',
+    margin: 10,
+  },
+  title: {
+    fontSize: 30,
     fontWeight: 'bold',
     margin: 10,
   },
